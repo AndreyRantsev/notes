@@ -230,7 +230,23 @@ body {
   background-position: center;
 }
 
+.input {
+  width: 385px;
+  height: 45px;
+  background-color: #F5F1E3;
+  border-radius: 5px;
+  padding: 0 13px;
+  color: black;
+  font-size: 26px;
+}
+.input::placeholder {
+  color: #717171;
+  font-size: 26px;
+  text-transform: capitalize;
+}
+
 .main-title {
+  margin-bottom: 32px;
   color: #F5F1E3;
   font-family: Inter;
   font-size: 80px;

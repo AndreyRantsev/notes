@@ -1,0 +1,15 @@
+.input{
+    width: 385px;
+    height: 45px;
+    background-color: $contentColor;
+    border-radius: 5px;
+    padding: 0 13px;
+    color: black;
+    font-size: 26px;
+    
+    &::placeholder {
+        color: #717171;
+        font-size: 26px;
+        text-transform: capitalize;
+    }
+}
