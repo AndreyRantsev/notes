@@ -1,4 +1,4 @@
-.input{
+.input {
     width: 385px;
     height: 45px;
     background-color: $contentColor;
@@ -13,14 +13,25 @@
         text-transform: capitalize;
     }
     
-    &--add{
+    &--add,
+    &--note {
         height: 54px;
         border-radius: 5px 0 0 5px;
     }
 
-    &--add-btn{
+    &--add-btn,
+    &--del {
         width: 101px;
         height: 54px;
         border-radius: 0 5px 5px 0;
+    }
+    
+    &--del {
+        background-color: $deleteColor;
+        color: $contentColor;
+    }
+
+    &--note {
+        width: 687px;
     }
 }

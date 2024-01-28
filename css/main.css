@@ -241,14 +241,21 @@ body {
   font-size: 26px;
   text-transform: capitalize;
 }
-.input--add {
+.input--add, .input--note {
   height: 54px;
   border-radius: 5px 0 0 5px;
 }
-.input--add-btn {
+.input--add-btn, .input--del {
   width: 101px;
   height: 54px;
   border-radius: 0 5px 5px 0;
+}
+.input--del {
+  background-color: #A60000;
+  color: #F5F1E3;
+}
+.input--note {
+  width: 687px;
 }
 
 .main-title {
@@ -269,4 +276,5 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  row-gap: 53px;
 }/*# sourceMappingURL=main.css.map */
