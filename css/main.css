@@ -228,4 +228,13 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+}
+
+.main-title {
+  color: #F5F1E3;
+  font-family: Inter;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }/*# sourceMappingURL=main.css.map */
