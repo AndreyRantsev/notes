@@ -62,9 +62,6 @@ input::-ms-clear {
 
 button, input[type=submit] {
   display: inline-block;
-  box-shadow: none;
-  background-color: transparent;
-  background: none;
   cursor: pointer;
 }
 
@@ -244,6 +241,15 @@ body {
   font-size: 26px;
   text-transform: capitalize;
 }
+.input--add {
+  height: 54px;
+  border-radius: 5px 0 0 5px;
+}
+.input--add-btn {
+  width: 101px;
+  height: 54px;
+  border-radius: 0 5px 5px 0;
+}
 
 .main-title {
   margin-bottom: 32px;
@@ -253,4 +259,14 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.main {
+  padding-top: 185px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }/*# sourceMappingURL=main.css.map */
