@@ -2,13 +2,35 @@
     padding-top: 185px;
     
 }
+
 .main-content {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     row-gap: 53px;
 }
+
 .list-notes {
+    max-height: 400px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 11px;               /* ширина scrollbar */
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;        /* цвет дорожки */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $upColor;    /* цвет плашки */
+        border-radius: 5px;
+    }
 }
+
 .list-notes__note {
+    padding-right: 5px;
+    &:not(:last-child) {
+        margin-bottom: 15px;
+    }
 }

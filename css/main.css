@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Reset and base styles  */
 * {
   padding: 0px;
@@ -294,4 +295,26 @@ body {
   flex-direction: column;
   align-items: flex-end;
   row-gap: 53px;
+}
+
+.list-notes {
+  max-height: 400px;
+  overflow: auto;
+}
+.list-notes::-webkit-scrollbar {
+  width: 11px; /* ширина scrollbar */
+}
+.list-notes::-webkit-scrollbar-track {
+  background: transparent; /* цвет дорожки */
+}
+.list-notes::-webkit-scrollbar-thumb {
+  background-color: #3D52D5; /* цвет плашки */
+  border-radius: 5px;
+}
+
+.list-notes__note {
+  padding-right: 5px;
+}
+.list-notes__note:not(:last-child) {
+  margin-bottom: 15px;
 }/*# sourceMappingURL=main.css.map */
