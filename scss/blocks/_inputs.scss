@@ -34,4 +34,14 @@
     &--note {
         width: 687px;
     }
+
+    &--add-btn {
+        @include hover-add-btn($upColor, $contentColor);
+        transition: background-color 0.5s, color 0.5s;
+    }
+
+    &--del {
+        @include hover-delete-btn(rgb(128, 0, 0));
+        transition: background-color 0.5s, color 0.5s;
+    }
 }

@@ -1,0 +1,16 @@
+@mixin hover-add-btn($colorBg, $txtColor){
+    @media (hover:hover){
+        &:hover {
+            background-color: $colorBg;
+            color: $txtColor;
+        }
+    }
+}
+
+@mixin hover-delete-btn($colorBg){
+    @media (hover:hover){
+        &:hover {
+            background-color: $colorBg;
+        }
+    }
+}
