@@ -7,15 +7,30 @@ const allNotes = localStorage.getItem("allNotes") || [];
 
 // =============Функции===================
 
-const renderNote = (value) => {
-    const note = 
-        `
-        <li class="list-notes__note">
-            <input type="text" class="input input--note" value=${value}>
-            <button class="input input--del">Delete</button>
-        </li>
-        `;
-        listNotes.insertAdjacentHTML("afterbegin", note);
+const renderNote = (allNotes) => {
+    
+    if (allNotes.length > 0) {
+        allNotes.forEach(element => {
+            const note = 
+            `
+            <li class="list-notes__note">
+                <input type="text" class="input input--note" value=${element}>
+                <button class="input input--del">Delete</button>
+            </li>
+            `;
+            listNotes.insertAdjacentHTML("afterbegin", note);
+        });
+    }
+}
+
+const delNotesFromRender = () => {
+    const notesFromRender = document.querySelectorAll('.list-notes__note');
+    console.log(notesFromRender);
+    if (notesFromRender.length > 0) {
+        notesFromRender.forEach(element => {
+            element.remove();
+        })
+    }
 }
 
 const pushNewNote = (value) => {
@@ -27,9 +42,10 @@ const prepareValue = (event) => {
     const addValue = inputAdd.value.trim();
     if(addValue.length > 0) {
         const key = "allNotes";
-        renderNote(addValue);
         pushNewNote(addValue);
         jsonItem({key, allNotes});
+        delNotesFromRender()
+        renderNote(allNotes);
     }
 }
 
@@ -44,6 +60,8 @@ const jsonItem = (object) => {
 // =============События===================
 
 form.addEventListener('submit', prepareValue);
+
+renderNote(allNotes);
 
 //==Пример работы с локальным хранилищем==
 
