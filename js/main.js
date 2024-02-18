@@ -67,8 +67,14 @@ const delInputValue = () => {
     inputAdd.value = "";
 }
 
-const delNote = (object) => {
-
+const delNote = (event) => {
+    const btnRemove = event.target;
+    if (btnRemove.classList.contains('input--del')){
+        const note = btnRemove.closest(".list-notes__note");
+        const noteInput = note.querySelector(".input--note");
+        const noteInputValue = noteInput.value;
+        console.log(noteInputValue);
+    }
 }
 
 
@@ -77,6 +83,7 @@ const delNote = (object) => {
 
 form.addEventListener('submit', prepareValue);
 
+listNotes.addEventListener('click', delNote);
 
 //==Пример работы с локальным хранилищем==
 
