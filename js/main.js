@@ -3,19 +3,20 @@
 const form = document.querySelector('#form');
 const inputAdd = form.querySelector('#inputAdd');
 const listNotes = document.querySelector('#listNotes');
-const allNotes = localStorage.getItem("allNotes") || [];
+const allNotes = JSON.parse(localStorage.getItem("allNotes")) || [];
+
 
 // =============Функции===================
 
 const renderNote = (allNotes) => {
-    
+    console.log(allNotes);
     if (allNotes.length > 0) {
         allNotes.forEach(element => {
             const note = 
             `
             <li class="list-notes__note">
-                <input type="text" class="input input--note" value=${element}>
-                <button class="input input--del">Delete</button>
+            <input type="text" class="input input--note" value=${element}>
+            <button class="input input--del">Delete</button>
             </li>
             `;
             listNotes.insertAdjacentHTML("afterbegin", note);
@@ -23,9 +24,12 @@ const renderNote = (allNotes) => {
     }
 }
 
+if (allNotes.length > 0){
+    renderNote(allNotes);  
+}
+
 const delNotesFromRender = () => {
     const notesFromRender = document.querySelectorAll('.list-notes__note');
-    console.log(notesFromRender);
     if (notesFromRender.length > 0) {
         notesFromRender.forEach(element => {
             element.remove();
@@ -44,8 +48,9 @@ const prepareValue = (event) => {
         const key = "allNotes";
         pushNewNote(addValue);
         jsonItem({key, allNotes});
-        delNotesFromRender()
+        delNotesFromRender();
         renderNote(allNotes);
+        delInputValue();
     }
 }
 
@@ -57,11 +62,21 @@ const jsonItem = (object) => {
     object.allNotes = JSON.stringify(object.allNotes);
     setItem(object);
 }
+
+const delInputValue = () => {
+    inputAdd.value = "";
+}
+
+const delNote = (object) => {
+
+}
+
+
+
 // =============События===================
 
 form.addEventListener('submit', prepareValue);
 
-renderNote(allNotes);
 
 //==Пример работы с локальным хранилищем==
 
