@@ -4,12 +4,12 @@ const form = document.querySelector('#form');
 const inputAdd = form.querySelector('#inputAdd');
 const listNotes = document.querySelector('#listNotes');
 const allNotes = JSON.parse(localStorage.getItem("allNotes")) || [];
+const inputSearch = document.querySelector("#search");
 const key = "allNotes";
 
 // =============Функции===================
 
 const renderNote = (allNotes) => {
-    console.log(allNotes);
     if (allNotes.length > 0) {
         allNotes.forEach(element => {
             const note = 
@@ -80,6 +80,19 @@ const delNote = (event) => {
     }
 }
 
+const searchNotes = (e) => {
+    let searchValue = e.target.value.toLowerCase();
+    const allInputs = document.querySelectorAll(".input--note");
+    allInputs.forEach(element => {
+        const valueNote = element.value.toLowerCase();
+        if(valueNote.indexOf(searchValue) === -1){
+            element.closest(".list-notes__note").style.display = "none";    
+        } else {
+            element.closest(".list-notes__note").style.display = "flex";
+        }
+    });
+    
+}
 
 
 // =============События===================
@@ -87,4 +100,6 @@ const delNote = (event) => {
 form.addEventListener('submit', prepareValue);
 
 listNotes.addEventListener('click', delNote);
+
+inputSearch.addEventListener('input', searchNotes)
 
