@@ -4,7 +4,7 @@ const form = document.querySelector('#form');
 const inputAdd = form.querySelector('#inputAdd');
 const listNotes = document.querySelector('#listNotes');
 const allNotes = JSON.parse(localStorage.getItem("allNotes")) || [];
-
+const key = "allNotes";
 
 // =============Функции===================
 
@@ -45,7 +45,6 @@ const prepareValue = (event) => {
     event.preventDefault();
     const addValue = inputAdd.value.trim();
     if(addValue.length > 0) {
-        const key = "allNotes";
         pushNewNote(addValue);
         jsonItem({key, allNotes});
         delNotesFromRender();
@@ -73,7 +72,11 @@ const delNote = (event) => {
         const note = btnRemove.closest(".list-notes__note");
         const noteInput = note.querySelector(".input--note");
         const noteInputValue = noteInput.value;
-        console.log(noteInputValue);
+        const currentDelNote = allNotes.indexOf(noteInputValue);
+        allNotes.splice(currentDelNote, 1);
+        jsonItem({key, allNotes});
+        delNotesFromRender();
+        renderNote(allNotes);
     }
 }
 
@@ -84,15 +87,4 @@ const delNote = (event) => {
 form.addEventListener('submit', prepareValue);
 
 listNotes.addEventListener('click', delNote);
-
-//==Пример работы с локальным хранилищем==
-
-// const fruits = ["Банан", "Яблоко", "Авокадо"];
-// const fruitsJson = JSON.stringify(fruits);
-// localStorage.setItem("fruits", fruitsJson);
-
-// const fromLocal = localStorage.getItem("fruits");
-// console.log(fromLocal);
-// const fruitsParse = JSON.parse(fromLocal);
-// console.log(fruitsParse);
 
