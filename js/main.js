@@ -15,7 +15,7 @@ const renderNote = (allNotes) => {
             const note = 
             `
             <li class="list-notes__note">
-            <input type="text" class="input input--note" value=${element}>
+            <div type="text" class="input input--note">${element}</div>
             <button class="input input--del">Delete</button>
             </li>
             `;

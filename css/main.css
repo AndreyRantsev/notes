@@ -313,6 +313,8 @@ body {
 }
 
 .list-notes__note {
+  display: flex;
+  column-gap: 4px;
   padding-right: 5px;
 }
 .list-notes__note:not(:last-child) {
