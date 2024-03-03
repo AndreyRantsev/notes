@@ -317,6 +317,12 @@ body {
   column-gap: 4px;
   padding-right: 5px;
 }
+.list-notes__note.focus .input--note {
+  transform: translateX(-59px);
+}
+.list-notes__note.focus .edit {
+  transform: translateX(111px);
+}
 .list-notes__note:not(:last-child) {
   margin-bottom: 15px;
 }
@@ -332,6 +338,7 @@ body {
   resize: none;
   outline: none;
   z-index: 2;
+  transition: 0.5s;
 }
 
 .edit {
@@ -340,6 +347,7 @@ body {
   background-color: #3D52D5;
   color: #F5F1E3;
   padding: 0 13px;
+  transition: 0.5s 0.4s;
   position: absolute;
   z-index: 0;
 }/*# sourceMappingURL=main.css.map */
