@@ -319,4 +319,27 @@ body {
 }
 .list-notes__note:not(:last-child) {
   margin-bottom: 15px;
+}
+
+.list-notes__wrapper-input {
+  position: relative;
+  width: 687px;
+}
+
+.input--note {
+  position: absolute;
+  left: 0;
+  resize: none;
+  outline: none;
+  z-index: 2;
+}
+
+.edit {
+  height: 100%;
+  right: 111px;
+  background-color: #3D52D5;
+  color: #F5F1E3;
+  padding: 0 13px;
+  position: absolute;
+  z-index: 0;
 }/*# sourceMappingURL=main.css.map */

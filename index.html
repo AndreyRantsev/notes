@@ -29,7 +29,13 @@
                   <input type="submit" class="input input--add-btn" value="Add">
                </form>
                <ul class="list-notes" id="listNotes">
-                  
+                  <li class="list-notes__note">
+                     <div class="list-notes__wrapper-input">
+                        <textarea type="text" class="input input--note">${element}</textarea>
+                        <button class="edit">Edit</button>
+                     </div>
+                     <button class="input input--del">Delete</button>
+                  </li>
                </ul>
             </div>
          </div>

@@ -32,7 +32,32 @@
     display: flex;
     column-gap: 4px;
     padding-right: 5px;
+
     &:not(:last-child) {
         margin-bottom: 15px;
     }
+}
+
+.list-notes__wrapper-input{
+    position: relative;
+    width: 687px;
+    // min-width: 797px;
+}
+
+.input--note{
+    position: absolute;
+    left: 0;
+    resize: none;
+    outline: none;
+    z-index: 2;
+}
+
+.edit{
+    height: 100%;
+    right: 111px;
+    background-color: $upColor;
+    color: $contentColor;
+    padding: 0 13px;
+    position: absolute;
+    z-index: 0;
 }
