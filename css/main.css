@@ -318,7 +318,7 @@ body {
   padding-right: 5px;
 }
 .list-notes__note.focus .input--note {
-  transform: translateX(-59px);
+  width: 628px;
 }
 .list-notes__note.focus .edit {
   transform: translateX(111px);

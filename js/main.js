@@ -15,8 +15,11 @@ const renderNote = (allNotes) => {
             const note = 
             `
             <li class="list-notes__note">
-            <textarea type="text" class="input input--note">${element}</textarea>
-            <button class="input input--del">Delete</button>
+                <div class="list-notes__wrapper-input">
+                    <textarea type="text" class="input input--note">${element}</textarea>
+                    <button class="edit">Edit</button>
+                </div>
+                <button class="input input--del">Delete</button>
             </li>
             `;
             listNotes.insertAdjacentHTML("afterbegin", note);
@@ -94,6 +97,17 @@ const searchNotes = (e) => {
     
 }
 
+const toggleEdit = (event) => {
+    if (event.target.closest(".input--note")){
+        event.target.focus();
+        event.target.closest(".list-notes__note").classList.add('focus');
+        event.target.addEventListener("blur", () => {
+            event.target.closest(".list-notes__note").classList.remove('focus');
+        })
+    }
+}
+
+
 
 // =============События===================
 
@@ -101,5 +115,7 @@ form.addEventListener('submit', prepareValue);
 
 listNotes.addEventListener('click', delNote);
 
-inputSearch.addEventListener('input', searchNotes)
+inputSearch.addEventListener('input', searchNotes);
+
+listNotes.addEventListener('click', toggleEdit);
 
