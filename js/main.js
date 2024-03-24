@@ -104,10 +104,11 @@ const toggleEdit = (event) => {
         noteInput.focus();
         const noteItem = noteInput.closest(".list-notes__note");
         noteItem.classList.add('focus');
+        let oldNoteValue = noteInput.value;
         
         const onBlur = () => {
             const noteValue = noteInput.value;
-            changeNote(noteValue); 
+            changeNote({noteValue, oldNoteValue}); 
             noteItem.classList.remove('focus');
             
             noteInput.removeEventListener("blur", onBlur);
@@ -121,8 +122,15 @@ if (listNotes) {
     listNotes.addEventListener('click', toggleEdit);
 }
 
-const changeNote = (noteValue) => {
-
+const changeNote = (obj) => {
+    console.log(obj);
+    if(obj.noteValue !== obj.oldNoteValue){
+        const indexOldNote = allNotes.indexOf(obj.oldNoteValue);
+        allNotes[indexOldNote] = obj.noteValue;
+        jsonItem({key, allNotes});
+        delNotesFromRender();
+        renderNote(allNotes);
+    }
 }
 
 // =============События===================
