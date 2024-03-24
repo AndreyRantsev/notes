@@ -97,17 +97,33 @@ const searchNotes = (e) => {
     
 }
 
+
 const toggleEdit = (event) => {
-    if (event.target.closest(".input--note")){
-        event.target.focus();
-        event.target.closest(".list-notes__note").classList.add('focus');
-        event.target.addEventListener("blur", () => {
-            event.target.closest(".list-notes__note").classList.remove('focus');
-        })
+    const noteInput = event.target.closest(".input--note");
+    if (noteInput) {
+        noteInput.focus();
+        const noteItem = noteInput.closest(".list-notes__note");
+        noteItem.classList.add('focus');
+        
+        const onBlur = () => {
+            const noteValue = noteInput.value;
+            changeNote(noteValue); 
+            noteItem.classList.remove('focus');
+            
+            noteInput.removeEventListener("blur", onBlur);
+        };
+        
+        noteInput.addEventListener("blur", onBlur);
     }
 }
 
+if (listNotes) {
+    listNotes.addEventListener('click', toggleEdit);
+}
 
+const changeNote = (noteValue) => {
+
+}
 
 // =============События===================
 
