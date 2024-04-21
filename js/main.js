@@ -3,8 +3,8 @@
 const form = document.querySelector('#form');
 const inputAdd = form.querySelector('#inputAdd');
 const listNotes = document.querySelector('#listNotes');
-const allNotes = JSON.parse(localStorage.getItem("allNotes")) || [];
 const inputSearch = document.querySelector("#search");
+const allNotes = JSON.parse(localStorage.getItem("allNotes")) || [];
 const key = "allNotes";
 
 // =============Функции===================
