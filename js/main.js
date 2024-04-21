@@ -99,6 +99,7 @@ const searchNotes = (e) => {
 
 
 const toggleEdit = (event) => {
+    console.log(event);
     const noteInput = event.target.closest(".input--note");
     if (noteInput) {
         noteInput.focus();

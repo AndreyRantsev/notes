@@ -8,7 +8,10 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-      <script src="./js/main.js" defer="defer"></script>
+      <!-- <script src="./js/main.js" defer="defer"></script> -->
+      <script src="./js/model.js" defer="defer" type="module"></script>
+      <script src="./js/view.js" defer="defer" type="module"></script>
+      <script src="./js/controller.js" defer="defer" type="module"></script>
    </head>
    <body>
       <header class="header">
@@ -29,13 +32,6 @@
                   <input type="submit" class="input input--add-btn" value="Add">
                </form>
                <ul class="list-notes" id="listNotes">
-                  <li class="list-notes__note">
-                     <div class="list-notes__wrapper-input">
-                        <textarea type="text" class="input input--note">${element}</textarea>
-                        <button class="edit">Edit</button>
-                     </div>
-                     <button class="input input--del">Delete</button>
-                  </li>
                </ul>
             </div>
          </div>
