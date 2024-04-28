@@ -9,5 +9,6 @@ view.form.addEventListener('submit', (event) =>{
     const addValue = view.inputAdd.value.trim();
     if(addValue.length > 0) {
         model.pushNewNote(addValue);
+        view.renderNote(model.allNotes);
     }
 });
