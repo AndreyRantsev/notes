@@ -2,10 +2,14 @@ export class View{
     constructor (){
         this.form = document.querySelector('#form');
         this.inputAdd = form.querySelector('#inputAdd');
-        this.listNotes = document.querySelector('#listNotes')
+        this.content = document.querySelector('#content');
     }
 
     renderNote = (allNotes) => {
+        this.delList();
+        const list = document.createElement('ul');
+        list.id = 'listNotes';
+        list.className = 'list-notes';
         const fragment = document.createDocumentFragment();
         if (allNotes.length > 0) {
             allNotes.forEach(element => {
@@ -18,10 +22,16 @@ export class View{
                     </div>
                     <button class="input input--del">Delete</button>
                 `;
-                fragment.appendChild(noteElement);
+                list.insertAdjacentElement('beforeend', noteElement)
             });
-            const listNotes = document.querySelector('#listNotes');
-            listNotes.insertBefore(fragment, listNotes.firstChild);
+            fragment.appendChild(list);
+            this.content.appendChild(fragment);
+        }
+    }
+    delList = () => {
+        const list = document.querySelector('#listNotes')
+        if(list){
+            list.remove();
         }
     }
 }
