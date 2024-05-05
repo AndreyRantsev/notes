@@ -27,3 +27,4 @@ view.content.addEventListener('click', (event) => {
         view.renderNote(model.allNotes);
     }
 });
+view.inputSearch.addEventListener('input', view.searchNotes);

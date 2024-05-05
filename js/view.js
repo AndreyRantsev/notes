@@ -3,6 +3,7 @@ export class View{
         this.form = document.querySelector('#form');
         this.inputAdd = form.querySelector('#inputAdd');
         this.content = document.querySelector('#content');
+        this.inputSearch = document.querySelector("#search")
         this.renderNote(allNotes)
     }
 
@@ -36,5 +37,18 @@ export class View{
     }
     delInputValue = () => {
         this.inputAdd.value = "";
+    }
+    searchNotes = (e) => {
+        let searchValue = e.target.value.toLowerCase();
+        const allInputs = document.querySelectorAll(".input--note");
+        allInputs.forEach(element => {
+            const valueNote = element.value.toLowerCase();
+            if(valueNote.indexOf(searchValue) === -1){
+                element.closest(".list-notes__note").style.display = "none";    
+            } else {
+                element.closest(".list-notes__note").style.display = "flex";
+            }
+        });
+        
     }
 }
