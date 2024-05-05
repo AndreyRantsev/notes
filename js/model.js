@@ -12,4 +12,8 @@ export class Model{
         const stringAllNotes = JSON.stringify(allNotes);
         localStorage.setItem(key, stringAllNotes);
     }
+    delNote = (currentDelNote) => {
+        this.allNotes.splice(currentDelNote, 1);
+        this.jsonItem(this.key, this.allNotes);
+    }
 }

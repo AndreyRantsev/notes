@@ -15,3 +15,15 @@ view.form.addEventListener('submit', (event) =>{
     }
 });
 
+view.content.addEventListener('click', (event) => {
+    const btnRemove = event.target;
+    if (btnRemove.classList.contains('input--del')){
+        const note = btnRemove.closest(".list-notes__note");
+        const noteInput = note.querySelector(".input--note");
+        const noteInputValue = noteInput.value;
+        const currentDelNote = model.allNotes.indexOf(noteInputValue);
+        model.delNote(currentDelNote)
+        view.delList();
+        view.renderNote(model.allNotes);
+    }
+});
