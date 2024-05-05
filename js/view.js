@@ -1,12 +1,12 @@
 export class View{
-    constructor (){
+    constructor (allNotes){
         this.form = document.querySelector('#form');
         this.inputAdd = form.querySelector('#inputAdd');
         this.content = document.querySelector('#content');
+        this.renderNote(allNotes)
     }
 
     renderNote = (allNotes) => {
-        this.delList();
         const list = document.createElement('ul');
         list.id = 'listNotes';
         list.className = 'list-notes';
