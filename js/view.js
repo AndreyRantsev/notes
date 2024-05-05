@@ -34,4 +34,7 @@ export class View{
             list.remove();
         }
     }
+    delInputValue = () => {
+        this.inputAdd.value = "";
+    }
 }

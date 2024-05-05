@@ -11,6 +11,7 @@ view.form.addEventListener('submit', (event) =>{
         model.pushNewNote(addValue);
         view.delList();
         view.renderNote(model.allNotes);
+        view.delInputValue();
     }
 });
 
